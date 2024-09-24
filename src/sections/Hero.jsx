@@ -8,6 +8,8 @@ import { bigShoe1 } from '../assets/images';
 import ShoeCard from '../components/ShoeCard';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import CountUp from 'react-countup';
+
 
 
 const Hero = () => {
@@ -69,7 +71,10 @@ const Hero = () => {
           w-full mt-20 gap-16">
           { statistics.map((stat) => (
             <div key={stat.label}>
-              <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
+              <p className="text-4xl font-palanquin font-bold">
+                <CountUp start={0} end={stat.value} duration={3}>
+                </CountUp>
+                +</p>
               <p className="leading-7 font-montserrat text-slate-gray">{stat.label}</p>
             </div>
           ))}
